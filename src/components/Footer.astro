@@ -1,0 +1,43 @@
+---
+const today = new Date();
+import { Icon } from 'astro-icon/components'
+---
+
+<footer>
+	&copy; {today.getFullYear()} Oscar Mateo Elías López.
+	<div class="social-links">
+		<a href="https://wa.me/qr/V7LX4JWRB5QIG1" target="_blank">
+			<span class="sr-only">WhatsApp</span>
+			<Icon width="32" height="32"  name="mdi:whatsapp" />
+		</a>
+		<a href="https://www.instagram.com/_mat.elias_/" target="_blank">
+			<span class="sr-only">Instagram</span>
+			<Icon width="32" height="32"  name="mdi:instagram" />
+		</a>
+		<a href="https://github.com/MatMT" target="_blank">
+			<span class="sr-only">GitHub</span>
+			<Icon width="32" height="32"  name="mdi:github" />
+		</a>
+	</div>
+</footer>
+<style>
+	footer {
+		padding: 2em 1em 6em 1em;
+		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		color: rgb(var(--gray));
+		text-align: center;
+	}
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+		margin-top: 1em;
+	}
+	.social-links a {
+		text-decoration: none;
+		color: rgb(var(--gray));
+	}
+	.social-links a:hover {
+		color: rgb(var(--gray-dark));
+	}
+</style>
