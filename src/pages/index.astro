@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import GrettingName from "../components/react/grettingName";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
@@ -13,7 +14,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <body>
     <Header />
     <main>
-      <h1 class="text-4xl">Hola! :)</h1>
+      <GrettingName client:load />
       <p>
         En este espacio podras explorar, aprender y crecer en la fe.	
       </p>
