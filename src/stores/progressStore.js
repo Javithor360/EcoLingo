@@ -1,99 +1,65 @@
-import {create} from 'zustand';
+import { create } from 'zustand';
 
 const useProgressStore = create((set, get) => ({
-        progress: typeof localStorage !== 'undefined'
-            ? JSON.parse(localStorage.getItem('lessonProgress') || '{}')
-            : {},
+    progress: typeof localStorage !== 'undefined'
+        ? JSON.parse(localStorage.getItem('lessonProgress') || '{}')
+        : {},
 
-        initializeStore: () => {
-            if (typeof window !== 'undefined') {
-                const stored = localStorage.getItem('lessonProgress');
-                if (stored) {
-                    set({progress: JSON.parse(stored)});
-                }
+    initializeStore: () => {
+        if (typeof window !== 'undefined') {
+            const stored = localStorage.getItem('lessonProgress');
+            if (stored) {
+                set({ progress: JSON.parse(stored) });
             }
-        },
+        }
+    },
 
-        completeQuestion: (lessonId, questionId, selectedOption) => {
-            set((state) => {
-                // Get the current lesson progress or initialize it
-                const currentProgress = state.progress[lessonId] || {
-                    completedQuestions: [],
-                    selectedAnswers: {},
-                    isCompleted: false,
-                };
-
-                // Update the progress object with the new values
-                const newProgress = {
-                    ...state.progress,
-                    [lessonId]: {
-                        ...currentProgress,
-                        completedQuestions: [...new Set([...currentProgress.completedQuestions, questionId])],
-                        selectedAnswers: {
-                            ...currentProgress.selectedAnswers,
-                            [questionId]: selectedOption, // Almacena la opción seleccionada
-                        },
-                    },
-                };
-
-                // Update the local storage
-                if (typeof localStorage !== 'undefined') {
-                    localStorage.setItem('lessonProgress', JSON.stringify(newProgress));
+    completeQuestion: (lessonId, questionId) => {
+        set((state) => {
+            const newProgress = {
+                ...state.progress,
+                [lessonId]: {
+                    lastCompletedQuestion: questionId,
                 }
+            };
 
-                return {progress: newProgress};
-            })
-        },
+            if (typeof localStorage !== 'undefined') {
+                localStorage.setItem('lessonProgress', JSON.stringify(newProgress));
+            }
 
-        completeLesson: (lessonId) => {
-            set((state) => {
-                const newProgress = {
-                    ...state.progress,
-                    [lessonId]: {
-                        ...state.progress[lessonId],
-                        isCompleted: true
-                    }
-                };
+            return { progress: newProgress };
+        });
+    },
 
-                // Update the local storage
-                if (typeof localStorage !== 'undefined') {
-                    localStorage.setItem('lessonProgress', JSON.stringify(newProgress));
-                }
+    isQuestionUnlocked: (lessonId, questionId) => {
+        const state = get();
+        const lessonProgress = state.progress[lessonId];
 
-                return {progress: newProgress};
-            });
-        },
+        // Primera pregunta siempre desbloqueada
+        if (questionId === 0) return true;
 
-        isQuestionUnlocked: (lessonId, questionId) => {
-            // Get the current state
-            const state = get();
-            const lessonProgress = state.progress[lessonId];
+        // Si no hay progreso, solo la primera pregunta está desbloqueada
+        if (!lessonProgress) return false;
 
-            // If the lesson progress is not defined, return true only if the question is the first one
-            if (!lessonProgress) return questionId === 0;
+        // Una pregunta está desbloqueada si la anterior fue completada
+        return lessonProgress.lastCompletedQuestion >= questionId - 1;
+    },
 
-            // If the lesson progress is defined, return the previous question is completed
-            if (questionId === 0) return true;
-            return lessonProgress.completedQuestions.includes(questionId - 1);
-        },
+    areAllQuestionsCompleted: (lessonId, totalQuestions) => {
+        const state = get();
+        const lessonProgress = state.progress[lessonId];
 
-        areAllQuestionsCompleted: (lessonId, totalQuestions) => {
-            const state = get();
-            const lessonProgress = state.progress[lessonId];
-            if (!lessonProgress) return false;
-            return lessonProgress.completedQuestions?.length === totalQuestions;
-        },
+        if (!lessonProgress) return false;
+        return lessonProgress.lastCompletedQuestion === totalQuestions - 1;
+    },
 
-        isLessonCompleted: (lessonId) => {
-            const state = get();
-            return state.progress[lessonId]?.isCompleted || false;
-        },
+    isQuestionCompleted: (lessonId, questionId) => {
+        const state = get();
+        const lessonProgress = state.progress[lessonId];
 
-        getSelectedAnswer: (lessonId, questionId) => {
-            const state = get();
-            return state.progress[lessonId]?.selectedAnswers?.[questionId] || null;
-        },
-    })
-);
+        if (!lessonProgress) return false;
+        return questionId <= lessonProgress.lastCompletedQuestion;
+    }
+}));
 
 export default useProgressStore;

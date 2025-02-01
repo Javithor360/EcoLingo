@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import useProgressStore from "../../stores/progressStore.js";
 
 const feedbackMessages = {
@@ -11,41 +11,40 @@ const getRandomMessage = (type) => {
     return messages[Math.floor(Math.random() * messages.length)];
 };
 
-export default function Question({lessonId, questionData}) {
-    const {completeQuestion, isQuestionUnlocked, initializeStore, getSelectedAnswer} = useProgressStore();
+const getCorrectOptionIndex = (options) => {
+    return options.findIndex(option => option.correct);
+};
+
+export default function Question({ lessonId, questionData }) {
+    const { completeQuestion, isQuestionUnlocked, initializeStore, isQuestionCompleted } = useProgressStore();
     const [feedback, setFeedback] = useState('');
     const [isLoaded, setIsLoaded] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
-    const [isStoreInitialized, setIsStoreInitialized] = useState(false);
 
     useEffect(() => {
-        initializeStore(); // Initialize the store
-        setIsLoaded(true); // Set the component as loaded
-    }, []);
+        initializeStore();
+        setIsLoaded(true);
 
-    useEffect(() => {
-        // Get previus selected answer
-        const savedAnswer = getSelectedAnswer(lessonId, questionData.id);
-        if (savedAnswer !== null) {
-            setSelectedOption(savedAnswer);
+        // Si la pregunta ya está completada, mostrar la respuesta correcta
+        if (isQuestionCompleted(lessonId, questionData.id)) {
+            const correctIndex = getCorrectOptionIndex(questionData.options);
+            setSelectedOption(correctIndex);
             setFeedback('Ya respondiste esta pregunta correctamente. 🎉');
         }
-    }, [isStoreInitialized, lessonId, questionData.id, getSelectedAnswer]);
-
+    }, [lessonId, questionData.id, questionData.options]);
 
     const isUnlocked = isQuestionUnlocked(lessonId, questionData.id);
 
     const handleAnswer = (isCorrect, optionIndex) => {
         if (isCorrect) {
             setFeedback(getRandomMessage('correct'));
-            completeQuestion(lessonId, questionData.id, optionIndex);
+            completeQuestion(lessonId, questionData.id);
             setSelectedOption(optionIndex);
         } else {
             setFeedback(getRandomMessage('incorrect'));
         }
     };
 
-    // Mostrar un skeleton loader mientras se carga el estado
     if (!isLoaded) {
         return (
             <div className="my-4 p-4 border rounded animate-pulse">
@@ -81,4 +80,4 @@ export default function Question({lessonId, questionData}) {
             )}
         </div>
     );
-};
+}
