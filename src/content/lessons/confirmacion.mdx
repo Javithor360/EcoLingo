@@ -1,0 +1,44 @@
+---
+title: '¿Por qué Confirmamos?'
+description: 'Lorem ipsum dolor sit amet'
+pubDate: 'Feb 15 2025'
+heroImage: '/blog-placeholder-1.webp'
+---
+
+import lessonData from '../data/questions/lesson1.json';
+import Question from "../../components/react/Question";
+import LessonForms from '../../components/react/LessonForm';
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretiu
+
+<Question
+    client:load
+    lessonId={lessonData.lessonId}
+    questionData={lessonData.questions[0]}
+/>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretiu
+
+<Question
+    client:load
+    lessonId={lessonData.lessonId}
+    questionData={lessonData.questions[1]}
+/>
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretiu
+
+<Question
+    client:load
+    lessonId={lessonData.lessonId}
+    questionData={lessonData.questions[2]}
+/>
+
+Contenido final...
+
+<LessonForms
+    client:load
+    lessonId={lessonData.lessonId}
+    formsUrl={lessonData.formsUrl}
+    totalQuestions={lessonData.questions.length}
+/>

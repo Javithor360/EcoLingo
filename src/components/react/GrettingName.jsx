@@ -18,7 +18,7 @@ export default function GrettingName() {
             ) : (
 
                 <div className="w-full text-center animate-fade-up my-5">
-                    <h3 className="font-bold uppercase py-4">¿Cómo te llamas?</h3>
+                    <h3 className="font-bold py-4">¿Cómo te llamas? 👀</h3>
                     <InputName />
                 </div>
             )

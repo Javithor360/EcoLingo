@@ -9,10 +9,11 @@ const nameValidations = {
         message: "Coloca nombre y apellido"
     },
     pattern: {
-        value: /^[A-Za-zÀ-ÿ\s]+$/,
-        message: "Solo se permiten letras y espacios"
+        value: /^[A-Za-zÀ-ÿ]+(?: [A-Za-zÀ-ÿ]+)$/,
+        message: "Ingresa: Primer nombre y primer apellido."
     }
 };
+
 
 export default function InputName({ onNameSubmit = null }) {
     const {setName} = useUserStore();
@@ -44,7 +45,7 @@ export default function InputName({ onNameSubmit = null }) {
                     autoComplete="off"
                 />
                 {errors.fullName && (
-                    <span className="uppercase text-center md:text-left text-red-500 text-sm mt-4">
+                    <span className=" text-center md:text-left text-red-500 text-sm mt-4">
                         {errors.fullName.message}
                     </span>
                 )}

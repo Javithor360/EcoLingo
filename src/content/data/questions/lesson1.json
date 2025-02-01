@@ -1,0 +1,34 @@
+{
+  "lessonId": "202501",
+  "title": "Primera Lección",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Pregunta 1?",
+      "options": [
+        { "text": "Opción 1", "correct": true },
+        { "text": "Opción 2", "correct": false },
+        { "text": "Opción 3", "correct": false }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "¿Pregunta 2?",
+      "options": [
+        { "text": "Opción 1", "correct": false },
+        { "text": "Opción 2", "correct": true },
+        { "text": "Opción 3", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Pregunta 3?",
+      "options": [
+        { "text": "Opción 1", "correct": false },
+        { "text": "Opción 2", "correct": false },
+        { "text": "Opción 3", "correct": true }
+      ]
+    }
+  ],
+  "formsUrl": "https://forms.gle/zCZWXMYTvxFSbSYt8"
+}
