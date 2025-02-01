@@ -1,15 +1,7 @@
 import { useState, useEffect } from "react";
+import getRandomMessage from "../../utils/getRandomMessage.js";
 import useProgressStore from "../../stores/progressStore.js";
 
-const feedbackMessages = {
-    correct: ['¡Excelente! 🎉', '¡Buen trabajo! 👍', '¡Correcto! 🎯'],
-    incorrect: ['Intenta de nuevo... 😢', 'Sigue intentándolo 💪', 'Casi lo logras 🧐'],
-};
-
-const getRandomMessage = (type) => {
-    const messages = feedbackMessages[type];
-    return messages[Math.floor(Math.random() * messages.length)];
-};
 
 const getCorrectOptionIndex = (options) => {
     return options.findIndex(option => option.correct);

@@ -6,7 +6,7 @@ export default function LessonForm({ lessonId, formsUrl, totalQuestions }) {
     const [isClient, setIsClient] = useState(false);
 
     useEffect(() => {
-        setIsClient(true); // Marca que el componente se está ejecutando en el cliente
+        setIsClient(true);
     }, []);
 
     if (!isClient) {

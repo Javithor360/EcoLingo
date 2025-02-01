@@ -5,11 +5,19 @@ import Footer from '../../components/Footer.astro';
 import {SITE_TITLE, SITE_DESCRIPTION} from '../../consts';
 import {getCollection} from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
-
 import WelcomeModal from "../../components/react/WelcomeModal";
+import {Icon} from 'astro-icon/components';
+
+// Función para verificar si una lección está desbloqueada
+const isLessonUnlocked = (pubDate: Date) => {
+    const now = new Date();
+    const unlockDate = new Date(pubDate);
+    unlockDate.setDate(unlockDate.getDate() - 7); // 7 días antes de la publicación
+    return now >= unlockDate;
+};
 
 const lessons = (await getCollection('lessons')).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+    (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
 );
 ---
 
@@ -17,117 +25,86 @@ const lessons = (await getCollection('lessons')).sort(
 <html lang="en">
 <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
-    <style>
-        main {
-            width: 960px;
-        }
-
-        ul {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        ul li {
-            width: calc(50% - 1rem);
-        }
-
-        ul li * {
-            text-decoration: none;
-            transition: 0.2s ease;
-        }
-
-        ul li:first-child {
-            width: 100%;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        ul li:first-child img {
-            width: 100%;
-        }
-
-        ul li:first-child .title {
-            font-size: 2.369rem;
-        }
-
-        ul li img {
-            margin-bottom: 0.5rem;
-            border-radius: 12px;
-        }
-
-        ul li a {
-            display: block;
-        }
-
-        .title {
-            margin: 0;
-            color: rgb(var(--black));
-            line-height: 1;
-        }
-
-        .date {
-            margin: 0;
-            color: rgb(var(--gray));
-        }
-
-        ul li a:hover h4,
-        ul li a:hover .date {
-            color: rgb(var(--accent));
-        }
-
-        ul a:hover img {
-            box-shadow: var(--box-shadow);
-        }
-
-        @media (max-width: 720px) {
-            ul {
-                gap: 0.5em;
-            }
-
-            ul li {
-                width: 100%;
-                text-align: center;
-            }
-
-            ul li:first-child {
-                margin-bottom: 0;
-            }
-
-            ul li:first-child .title {
-                font-size: 1.563em;
-            }
-        }
-    </style>
 </head>
-<body>
+<body class="min-h-screen bg-base-100">
 <Header/>
-<main>
-    <section>
-        <ul>
-            {
-                lessons.map((lesson) => (
-                        <li>
-                            <a href={`/lessons/${lesson.id}/`}>
-                                <img width={720} height={360} src={lesson.data.heroImage} alt=""/>
-                                <h4 class="title">{lesson.data.title}</h4>
-                                <p class="date">
-                                    <FormattedDate date={lesson.data.pubDate}/>
-                                </p>
-                            </a>
-                        </li>
-                ))
-            }
-        </ul>
-    </section>
+<main class="container mx-auto px-4 py-8 max-w-[960px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {
+            lessons.map((lesson, index) => {
+                const unlocked = isLessonUnlocked(lesson.data.pubDate);
+                const unlockDate = new Date(lesson.data.pubDate);
+                unlockDate.setDate(unlockDate.getDate() - 7);
+
+                // Contenido de la card
+                const cardContent = (
+                        <div class={`card rounded-md overflow-hidden ${index === 0 ? 'md:col-span-2' : ''}`}>
+                            <figure class="relative">
+                                <img
+                                        src={lesson.data.heroImage}
+                                        alt=""
+                                        class={`w-full ${index === 0 ? 'md:h-80' : 'h-52'} object-cover`}
+                                />
+
+                                {!unlocked && (
+                                        <div class="absolute inset-0 bg-base-300/80 backdrop-blur-sm flex flex-col items-center justify-center">
+                                            <Icon
+                                                    name="mdi:lock"
+                                                    class="w-12 h-12 text-base-content"
+                                            />
+                                            <p class="text-base-content text-sm mt-4 px-4 text-center">
+                                                Se desbloquea el {unlockDate.toLocaleDateString()}
+                                            </p>
+                                        </div>
+                                )}
+                            </figure>
+
+                            <div class="card-body p-3">
+                                <h2 class={`${index === 0 ? 'text-4xl text-center' : 'text-2xl'} text-gray-900`}>
+                                    {lesson.data.title}
+                                </h2>
+
+                                <div class={`grid items-center grid-cols-2 ${index === 0 ? 'md:grid-cols-1' : ''}`}>
+                                    <p class={`${index === 0 ? 'text-center' : ''} text-base-content/70 m-0`}>
+                                        <FormattedDate date={lesson.data.pubDate}/>
+                                    </p>
+                                    <div class={`card-actions ${index === 0 ? 'justify-center' : 'justify-end'}`}>
+                                        {unlocked ? (
+                                                <a
+                                                        href={`/lessons/${lesson.id}/`}
+                                                        class="btn text-lg btn-primary"
+                                                >
+                                                    Ver lección
+                                                    <Icon name="mdi:arrow-right" class="w-4 h-4 ml-2"/>
+                                                </a>
+                                        ) : (
+                                                <button
+                                                        class="btn text-lg btn-disabled"
+                                                        disabled
+                                                >
+                                                    Bloqueado
+                                                    <Icon name="mdi:lock" class="w-4 h-4 ml-2"/>
+                                                </button>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                );
+
+                // Renderizar la card envuelta en un <a> si está desbloqueada
+                return unlocked ? (
+                        <a href={`/lessons/${lesson.id}/`} class="block contents">
+                            {cardContent}
+                        </a>
+                ) : (
+                    cardContent
+                );
+            })
+        }
+    </div>
 </main>
 <Footer/>
-
-
 <WelcomeModal client:load/>
-
 </body>
 </html>

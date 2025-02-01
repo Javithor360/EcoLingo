@@ -1,0 +1,32 @@
+{
+  "feedbackMessages": {
+    "correct": [
+      "¡Genial! 🎉",
+      "¡Bien hecho! ✅",
+      "¡Exacto! 🔥",
+      "¡Lo lograste! 🚀",
+      "¡Sigue así! 💪",
+      "¡Eso es! 🎯",
+      "¡Muy bien! 👏",
+      "¡Correcto! 🎊",
+      "¡Increíble! 🌟",
+      "¡Le sabes! 🏆",
+      "¡Acertaste! 🤩",
+      "¡Sí, justo así! ✨"
+    ],
+    "incorrect": [
+      "Ups... 😕",
+      "Casi, inténtalo otra vez! 🔄",
+      "No te rindas 💪",
+      "Sigue practicando 📚",
+      "Vamos, tú puedes! 🔥",
+      "Vuelve a leer un poco más 🤔",
+      "Casi lo consigues! 🧐",
+      "No te preocupes, sigue intentando! 😊",
+      "Esa no era, pero vas bien! 🚶‍♂️",
+      "¡Ánimo! 💖",
+      "Aprender es parte del proceso! 📖",
+      "No pasa nada, prueba otra vez! 🔁"
+    ]
+  }
+}
