@@ -1,0 +1,34 @@
+{
+  "lessonId": "250215",
+  "title": "Sacramento de la Confirmación",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Qué recibimos en la confirmación?",
+      "options": [
+        { "text": "El Santo Crisma", "correct": false },
+        { "text": "Una bendición del sacerdote", "correct": false },
+        { "text": "Al Espíritu Santo", "correct": true }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "¿Cuáles son los efectos del Sacramento de la Confirmación en la vida de un cristiano?",
+      "options": [
+        { "text": "Nos convierte en sacerdotes ordenados", "correct": false },
+        { "text": "Nos fortalece con el Espíritu Santo para dar testimonio de la fe", "correct": true },
+        { "text": "Nos libera automáticamente de todo pecado", "correct": false }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Por qué la Confirmación está vinculada estrechamente al Bautismo?",
+      "options": [
+        { "text": "Porque ambos sacramentos nos preparan para el matrimonio", "correct": false },
+        { "text": "Porque la Confirmación sustituye al Bautismo", "correct": false },
+        { "text": "Porque la Confirmación completa la gracia recibida en el Bautismo", "correct": true }
+      ]
+    }
+  ],
+  "formsUrl": "https://forms.gle/ejemploFormulario"
+}
