@@ -84,7 +84,7 @@ export default function Question({ lessonId, questionData }) {
                             onClick={() => handlePreselectAnswer(index)}
                             className={`w-full p-4 text-left border-2 rounded-lg transition-all duration-300
                                 ${!isUnlocked || isCorrect === true ? 'cursor-not-allowed' : 'cursor-pointer'}
-                                ${isSelected ? 'border-2' : 'border-gray-200'} 
+                                ${isSelected ? 'border-2' : ''} 
                                 ${isCorrectOption ? 'bg-green-100 border-green-500 animate-pulse' : ''}
                                 ${isWrongOption ? 'bg-red-100 border-red-500 animate-shake' : ''}
                                 ${isPreselected && !isSelected ? 'border-blue-600' : ''}
