@@ -87,7 +87,7 @@ export default function Question({ lessonId, questionData }) {
                                 ${isSelected ? 'border-2' : 'border-gray-200'} 
                                 ${isCorrectOption ? 'bg-green-100 border-green-500 animate-pulse' : ''}
                                 ${isWrongOption ? 'bg-red-100 border-red-500 animate-shake' : ''}
-                                ${isPreselected && !isSelected ? 'border-blue-500' : ''}
+                                ${isPreselected && !isSelected ? 'border-blue-600' : ''}
                                 ${!isSelected && (isUnlocked && isCorrect !== true) ?
                                 'hover:bg-gray-50 hover:border-gray-300 hover:shadow-md transform hover:-translate-y-1' : ''}
                             `}
