@@ -1,8 +1,8 @@
-import feedbackData from '../content/data/feedbackMessages.json';
+import {gradients} from '../content/data/gradientsTW.json';
 
-const getRandomMessage = (type) => {
-    const messages = feedbackData.feedbackMessages[type];
-    return messages[Math.floor(Math.random() * messages.length)];
-}
+const getRandomGradient = () => {
+    const randomIndex = Math.floor(Math.random() * gradients.length);
+    return gradients[randomIndex];
+};
 
-export default getRandomMessage;
+export default getRandomGradient;

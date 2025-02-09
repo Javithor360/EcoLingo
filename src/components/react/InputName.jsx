@@ -9,7 +9,7 @@ const nameValidations = {
         message: "Coloca nombre y apellido"
     },
     pattern: {
-        value: /^[A-Za-zÀ-ÿ]+(?: [A-Za-zÀ-ÿ]+)$/,
+        value: /^\s*[A-Za-zÀ-ÿ]+(?: [A-Za-zÀ-ÿ]+)\s*$/,
         message: "Ingresa: Primer nombre y primer apellido."
     }
 };
@@ -29,7 +29,8 @@ export default function InputName({ onNameSubmit = null }) {
     });
 
     const onSubmit = (data) => {
-        setName(data.fullName);
+        const trimmedName = data.fullName.trim();
+        setName(trimmedName);
         if (onNameSubmit) onNameSubmit();
     };
 

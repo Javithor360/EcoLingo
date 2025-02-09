@@ -1,6 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	safelist: [
+		"bg-gradient-to-r",
+		"from-green-400",
+		"to-blue-500",
+		"from-cyan-500",
+		"to-blue-500",
+		"from-purple-500",
+		"to-pink-500",
+		"from-yellow-400",
+		"to-orange-500",
+	],
 	theme: {
 		extend: {},
 	},

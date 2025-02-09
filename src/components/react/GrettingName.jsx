@@ -14,12 +14,16 @@ export default function GrettingName() {
     return (
         <div className={`py-4 transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
             {name ? (
-                <h2 className="m-0">Bienvenid@, <strong>{name}</strong> 👋</h2>
+                <>
+                    <h2 className="m-0">Bienvenid@, <strong>{name}</strong> 👋</h2>
+                    <a href="/lessons" className="btn mt-6 hover:text-white font-bold uppercase bg-blue-700 text-white w-full animate-bounce">
+                         Comenzar... 🚀
+                    </a>
+                </>
             ) : (
-
                 <div className="w-full text-center animate-fade-up my-5">
                     <h3 className="font-bold py-4">¿Cómo te llamas? 👀</h3>
-                    <InputName />
+                    <InputName/>
                 </div>
             )
             }

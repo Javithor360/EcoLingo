@@ -17,8 +17,8 @@ export default function LessonForm({ lessonId, formsUrl, totalQuestions }) {
 
     if (!isUnlocked) {
         return (
-            <div className="my-4 p-4 bg-gray-100 rounded opacity-50">
-                <p className="text-center">Completa todas las preguntas para acceder al cuestionario final</p>
+            <div className="my-4 p-16 bg-gray-100 rounded-md ">
+                <p className="text-center font-bold" style={{margin: 0}}>Completa la lección para acceder la pregunta final... 🧐</p>
             </div>
         );
     }

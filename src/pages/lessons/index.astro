@@ -6,6 +6,7 @@ import {SITE_TITLE, SITE_DESCRIPTION} from '../../consts';
 import {getCollection} from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import WelcomeModal from "../../components/react/WelcomeModal";
+import getRandomGradient from '../../utils/getRandomGradients';
 import {Icon} from 'astro-icon/components';
 
 // Función para verificar si una lección está desbloqueada
@@ -19,6 +20,7 @@ const isLessonUnlocked = (pubDate: Date) => {
 const lessons = (await getCollection('lessons')).sort(
     (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
 );
+
 ---
 
 <!doctype html>
@@ -38,25 +40,31 @@ const lessons = (await getCollection('lessons')).sort(
 
                 // Contenido de la card
                 const cardContent = (
-                        <div class={`card rounded-md overflow-hidden ${index === 0 ? 'md:col-span-2' : ''}`}>
-                            <figure class="relative">
-                                <img
-                                        src={lesson.data.heroImage}
-                                        alt=""
-                                        class={`w-full ${index === 0 ? 'md:h-80' : 'h-52'} object-cover`}
-                                />
+                        <div class={`card overflow-hidden ${index === 0 ? 'md:col-span-2' : ''}`}>
+                            <figure class="relative ">
+                            {lesson.data.heroImage ? (
+                                    <img
+                                            src={lesson.data.heroImage}
+                                            alt=""
+                                            class={`w-full ${index === 0 ? 'md:h-80' : 'h-52'}  object-cover`}
+                                    />
+                            ) : (
+                                    <div
+                                            class={`w-full ${index === 0 ? 'md:h-80' : 'h-52'}  ${getRandomGradient()}`}
+                                    />
+                            )}
 
-                                {!unlocked && (
-                                        <div class="absolute inset-0 bg-base-300/80 backdrop-blur-sm flex flex-col items-center justify-center">
-                                            <Icon
-                                                    name="mdi:lock"
-                                                    class="w-12 h-12 text-base-content"
-                                            />
-                                            <p class="text-base-content text-sm mt-4 px-4 text-center">
-                                                Se desbloquea el {unlockDate.toLocaleDateString()}
-                                            </p>
-                                        </div>
-                                )}
+                            {!unlocked && (
+                                    <div class="absolute inset-0 bg-base-300/80 backdrop-blur-sm flex flex-col items-center justify-center">
+                                        <Icon
+                                                name="mdi:lock"
+                                                class="w-12 h-12 text-base-content"
+                                        />
+                                        <p class="text-base-content text-xl mt-4 px-4 text-center">
+                                            Se desbloquea el {unlockDate.toLocaleDateString()}
+                                        </p>
+                                    </div>
+                            )}
                             </figure>
 
                             <div class="card-body p-3">
