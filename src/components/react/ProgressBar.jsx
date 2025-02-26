@@ -2,17 +2,14 @@ import React, {useEffect, useState} from "react";
 import useProgressStore from "../../stores/progressStore.js";
 
 export default function ProgressBar({lessonId, totalQuestions = 0}) {
-    // Progress store - suscribirse directamente al estado
     const {
         isQuestionCompleted,
         initializeStore,
-        progress // Necesitamos suscribirnos a progress para detectar cambios
+        progress
     } = useProgressStore();
 
-    // Progreso de lectura basado en scroll
-    const [readProgress, setReadProgress] = useState(0);
-    // Progreso de lectura basado en preguntas
-    const [questionProgress, setQuestionProgress] = useState(0);
+    const [readProgress, setReadProgress] = useState(0); // Progreso de lectura basado en scroll
+    const [questionProgress, setQuestionProgress] = useState(0); // Progreso de lectura basado en preguntas
     const [confiImage, setConfiImage] = useState('/images/confi/Simple1.png');
 
     useEffect(() => {
@@ -66,7 +63,7 @@ export default function ProgressBar({lessonId, totalQuestions = 0}) {
         } else if (percentage >= 66.67) {
             setConfiImage("/images/confi/Shout1.png");
         }
-    }, [lessonId, totalQuestions, isQuestionCompleted, progress, readProgress]); // Añadir 'progress' como dependencia
+    }, [lessonId, totalQuestions, isQuestionCompleted, progress, readProgress]);
 
     return (
         <div className="sticky bg-white rounded-2xl flex gap-4 w-11/12 mt-2 shadow mx-auto px-4 top-2.5 z-50">
