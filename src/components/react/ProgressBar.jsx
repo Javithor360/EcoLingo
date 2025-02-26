@@ -66,7 +66,7 @@ export default function ProgressBar({lessonId, totalQuestions = 0}) {
     }, [lessonId, totalQuestions, isQuestionCompleted, progress, readProgress]);
 
     return (
-        <div className="sticky bg-white rounded-2xl flex gap-4 w-11/12 mt-2 shadow mx-auto px-4 top-2.5 z-50">
+        <div className="sticky bg-white rounded-2xl flex items-center justify-center gap-4 md:gap-12 w-11/12 mt-2 shadow mx-auto px-4 top-2.5 z-50">
             <div className="left-0 w-10/12 my-auto rounded-full h-2.5 bg-gray-300 ">
                 {/* Progreso de lectura (gris) */}
                 <div
