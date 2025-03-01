@@ -1,0 +1,61 @@
+{
+  "lessonId": "250308",
+  "title": "¿Qué beneficio tiene usar la tecnología correctamente?",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Qué beneficio tiene usar la tecnología correctamente?",
+      "options": [
+        {
+          "text": "Conectar y dialogar en comunidad",
+          "correct": true
+        },
+        {
+          "text": "Aislar a las personas",
+          "correct": false
+        },
+        {
+          "text": "Reducir la comunicación",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "¿Cuál es uno de los principales riesgos espirituales del uso excesivo de la tecnología según San Juan Pablo II?",
+      "options": [
+        {
+          "text": "Tener demasiado acceso a contenido religioso",
+          "correct": false
+        },
+        {
+          "text": "Rezar con mayor frecuencia usando aplicaciones",
+          "correct": false
+        },
+        {
+          "text": "Vivir una existencia superficial sin profundidad espiritual",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Qué significa ser 'sal y luz' en el mundo digital según la enseñanza cristiana?",
+      "options": [
+        {
+          "text": "Evitar completamente el uso de redes sociales",
+          "correct": false
+        },
+        {
+          "text": "Usar nuestras plataformas solo para entretenimiento",
+          "correct": false
+        },
+        {
+          "text": "Ser auténticos y coherentes con nuestros valores cristianos al usar la tecnología",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "formsUrl": "https://forms.gle/fcq9mLExiA9Zxuys9"
+}

@@ -63,6 +63,7 @@ export default function ProgressBar({lessonId, totalQuestions = 0}) {
         } else if (percentage >= 66.67) {
             setConfiImage("/images/confi/Shout1.png");
         }
+
     }, [lessonId, totalQuestions, isQuestionCompleted, progress, readProgress]);
 
     return (

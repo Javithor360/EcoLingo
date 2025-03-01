@@ -9,18 +9,11 @@ import WelcomeModal from "../../components/react/WelcomeModal";
 import getRandomGradient from '../../utils/getRandomGradients';
 import {Icon} from 'astro-icon/components';
 
-// Función para verificar si una lección está desbloqueada
-const isLessonUnlocked = (pubDate: Date) => {
-    const now = new Date();
-    const unlockDate = new Date(pubDate);
-    unlockDate.setDate(unlockDate.getDate() - 7); // 7 días antes de la publicación
-    return now >= unlockDate;
-};
-
+// Ya no usamos la función en el servidor
+// En su lugar, obtenemos todas las lecciones sin filtrar
 const lessons = (await getCollection('lessons')).sort(
     (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf(),
 );
-
 ---
 
 <!doctype html>
@@ -34,37 +27,40 @@ const lessons = (await getCollection('lessons')).sort(
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {
             lessons.map((lesson, index) => {
-                const unlocked = isLessonUnlocked(lesson.data.pubDate);
-                const unlockDate = new Date(lesson.data.pubDate);
+                // Guardamos la fecha de publicación y la fecha de desbloqueo como atributos data-*
+                // para que el JavaScript del cliente pueda acceder a ellos
+                const pubDate = lesson.data.pubDate;
+                const unlockDate = new Date(pubDate);
                 unlockDate.setDate(unlockDate.getDate() - 7);
 
-                // Contenido de la card
-                const cardContent = (
-                        <div class={`card overflow-hidden ${index === 0 ? 'md:col-span-2' : ''}`}>
-                            <figure class="relative ">
-                            {lesson.data.heroImage ? (
-                                    <img
-                                            src={lesson.data.heroImage}
-                                            alt=""
-                                            class={`w-full ${index === 0 ? 'md:h-80' : 'h-52'}  object-cover`}
-                                    />
-                            ) : (
-                                    <div
-                                            class={`w-full ${index === 0 ? 'md:h-80' : 'h-52'}  ${getRandomGradient()}`}
-                                    />
-                            )}
-
-                            {!unlocked && (
-                                    <div class="absolute inset-0 bg-base-300/80 backdrop-blur-sm flex flex-col items-center justify-center">
-                                        <Icon
-                                                name="mdi:lock"
-                                                class="w-12 h-12 text-base-content"
+                return (
+                        <div class={`lesson-card card overflow-hidden ${index === 0 ? 'md:col-span-2' : ''}`}
+                             data-pub-date={pubDate.toISOString()}
+                             data-unlock-date={unlockDate.toISOString()}
+                             data-lesson-id={lesson.id}>
+                            <figure class="relative">
+                                {lesson.data.heroImage ? (
+                                        <img
+                                                src={lesson.data.heroImage}
+                                                alt=""
+                                                class={`w-full ${index === 0 ? 'md:h-80' : 'h-52'} object-cover`}
                                         />
-                                        <p class="text-base-content text-xl mt-4 px-4 text-center">
-                                            Se desbloquea el {unlockDate.toLocaleDateString()}
-                                        </p>
-                                    </div>
-                            )}
+                                ) : (
+                                        <div
+                                                class={`w-full rounded-md ${index === 0 ? 'md:h-80' : 'h-52'} ${getRandomGradient()}`}
+                                        />
+                                )}
+
+                                {/* El overlay de bloqueo ahora se gestionará con JavaScript */}
+                                <div class="lock-overlay absolute inset-0 bg-base-300/80 backdrop-blur-sm flex flex-col items-center justify-center hidden">
+                                    <Icon
+                                            name="mdi:lock"
+                                            class="w-12 h-12 text-base-content"
+                                    />
+                                    <p class="text-base-content text-xl mt-4 px-4 text-center unlock-date-text">
+                                        Se desbloquea el {unlockDate.toLocaleDateString()}
+                                    </p>
+                                </div>
                             </figure>
 
                             <div class="card-body p-3">
@@ -77,36 +73,25 @@ const lessons = (await getCollection('lessons')).sort(
                                         <FormattedDate date={lesson.data.pubDate}/>
                                     </p>
                                     <div class={`card-actions ${index === 0 ? 'justify-center' : 'justify-end'}`}>
-                                        {unlocked ? (
-                                                <a
-                                                        href={`/lessons/${lesson.id}/`}
-                                                        class="btn text-lg btn-primary"
-                                                >
-                                                    Ver lección
-                                                    <Icon name="mdi:arrow-right" class="w-4 h-4 ml-2"/>
-                                                </a>
-                                        ) : (
-                                                <button
-                                                        class="btn text-lg btn-disabled"
-                                                        disabled
-                                                >
-                                                    Bloqueado
-                                                    <Icon name="mdi:lock" class="w-4 h-4 ml-2"/>
-                                                </button>
-                                        )}
+                                        {/* Ambos botones están presentes, pero se mostrarán u ocultarán con JavaScript */}
+                                        <a
+                                                href={`/lessons/${lesson.id}/`}
+                                                class="unlocked-button btn text-lg btn-primary"
+                                        >
+                                            Ver lección
+                                            <Icon name="mdi:arrow-right" class="w-4 h-4 ml-2"/>
+                                        </a>
+                                        <button
+                                                class="locked-button btn text-lg btn-disabled hidden"
+                                                disabled
+                                        >
+                                            Bloqueado
+                                            <Icon name="mdi:lock" class="w-4 h-4 ml-2"/>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                );
-
-                // Renderizar la card envuelta en un <a> si está desbloqueada
-                return unlocked ? (
-                        <a href={`/lessons/${lesson.id}/`} class="block contents">
-                            {cardContent}
-                        </a>
-                ) : (
-                    cardContent
                 );
             })
         }
@@ -114,5 +99,48 @@ const lessons = (await getCollection('lessons')).sort(
 </main>
 <Footer/>
 <WelcomeModal client:load/>
+
+<script>
+    // Esta función se ejecutará en el cliente
+    function checkLessonStatus() {
+        const now = new Date();
+        const lessonCards = document.querySelectorAll('.lesson-card');
+
+        lessonCards.forEach(card => {
+            const unlockDate = new Date(card.dataset.unlockDate);
+            const lessonId = card.dataset.lessonId;
+            const isUnlocked = now >= unlockDate;
+
+            const lockOverlay = card.querySelector('.lock-overlay');
+            const unlockedButton = card.querySelector('.unlocked-button');
+            const lockedButton = card.querySelector('.locked-button');
+
+            if (isUnlocked) {
+                // Lección desbloqueada
+                lockOverlay.classList.add('hidden');
+                unlockedButton.classList.remove('hidden');
+                lockedButton.classList.add('hidden');
+
+                // Convertir la tarjeta en un enlace
+                card.addEventListener('click', (e) => {
+                    // Solo redirigir si no se hizo clic en el botón
+                    if (!e.target.closest('.unlocked-button')) {
+                        window.location.href = `/lessons/${lessonId}/`;
+                    }
+                });
+                card.classList.add('cursor-pointer');
+            } else {
+                // Lección bloqueada
+                lockOverlay.classList.remove('hidden');
+                unlockedButton.classList.add('hidden');
+                lockedButton.classList.remove('hidden');
+            }
+        });
+    }
+
+    // Ejecutar cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', checkLessonStatus);
+</script>
+
 </body>
 </html>

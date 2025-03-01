@@ -15,7 +15,7 @@ const lessons = defineCollection({
 		updatedDate: z.coerce.date().optional(),
 		heroImage: z.string().optional(),
 		lessonId: z.string().optional(),
-		totalLessons: z.number().optional(),
+		totalQuestions: z.number().optional(),
 	}),
 });
 

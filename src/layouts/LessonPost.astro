@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="es">
 <head>
     <BaseHead title={title} description={description}/>
     <style>
@@ -83,9 +83,11 @@ const {
 <body>
 <Header/>
 
+<!--<pre>{JSON.stringify(lessonId, null, 2)}</pre>-->
+
 {
     lessonId &&
-        <ProgressBar client:load lessonId={250215}  totalQuestions={totalQuestions} />
+        <ProgressBar client:load lessonId={lessonId} totalQuestions={totalQuestions}/>
 }
 
 <main>
