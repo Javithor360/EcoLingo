@@ -28,7 +28,7 @@ export default function GrettingName() {
             )
             }
 
-            <hr className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 border-0 my-8"/>
+            <hr className="h-1 bg-gradient-to-r from-teal-800 via-blue-500 to-green-500 border-0 my-8"/>
 
         </div>
     )
