@@ -39,17 +39,17 @@ export default function LessonForm({ lessonId, formsUrl, totalQuestions }) {
             </div>
             <h3 className="text-2xl font-bold text-center text-green-800 mb-3">¡Felicitaciones!</h3>
             <p className="text-center text-lg text-gray-700 mb-6 max-w-md">
-                Has completado esta lección. Estás listo para continuar con el cuestionario final.
+                Has completado esta lección. ¡Estás listo para continuar con la siguiente y un poco más!
             </p>
             <a
                 href={formsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                // target="_blank"
+                // rel="noopener noreferrer"
                 className="btn text-teal-700 bg-white btn-lg gap-2 shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105"
             >
-                <span>Ir al cuestionario ➜</span>
+                <span>Ir a la siguiente lección ➜</span>
             </a>
-            <p className="mt-4 text-sm text-center text-gray-500">El cuestionario se abrirá en una nueva ventana</p>
+            {/* <p className="mt-4 text-sm text-center text-gray-500">El cuestionario se abrirá en una nueva ventana</p> */}
         </div>
     );
 }

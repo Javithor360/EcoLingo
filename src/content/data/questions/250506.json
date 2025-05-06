@@ -1,0 +1,61 @@
+{
+  "lessonId": "250506",
+  "title": "Nuestro Medio Ambiente",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Que es el Medio Ambiente?",
+      "options": [
+        {
+          "text": "Una persona",
+          "correct": false
+        },
+        {
+          "text": "Todo lo que nos rodea, árboles, animales",
+          "correct": true
+        },
+        {
+          "text": "La basura",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "¿Cuál de estos ayuda al medio ambiente?",
+      "options": [
+        {
+          "text": "Plantar Árboles",
+          "correct": true
+        },
+        {
+          "text": "Tirar la basura al suelo",
+          "correct": false
+        },
+        {
+          "text": "Usar muchos plásticos",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Cómo podemos cuidar el agua?",
+      "options": [
+        {
+          "text": "Jugar con el agua",
+          "correct": false
+        },
+        {
+          "text": "No cerrar la llave mientras nos cepillamos",
+          "correct": false
+        },
+        {
+          "text": "No tirar basura en ríos, lagos o mares",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "formsUrl": "/lessons/02contaminacion/"
+}

@@ -1,0 +1,35 @@
+{
+    "lessonId": "250507",
+    "title": "Cuidemos Nuestro Planeta",
+    "questions": [
+      {
+        "id": 0,
+        "text": "¿Qué causa contaminación?",
+        "options": [
+            { "text": "Cuidar los árboles", "correct": false },
+            { "text": "Reciclar", "correct": false },
+            { "text": "Tirar basura en la calle", "correct": true }
+        ]
+      },
+      {
+        "id": 1,
+        "text": "¿Cómo contaminan las empresas?",
+        "options": [
+            { "text": "Plantando jardines", "correct": false },
+            { "text": "Arrojando humo y basura al ambiente", "correct": true },
+          { "text": "Usando energía solar", "correct": false }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "¿Qué pasa si tiramos basura en los ríos?",
+        "options": [
+            { "text": "Los peces hacen más amigos", "correct": false },
+            { "text": "El río se vuelve más limpio", "correct": false },
+            { "text": "Los peces pueden enfermarse o morir", "correct": true }
+        ]
+      }
+    ],
+    "formsUrl": "/lessons"
+  }
+  

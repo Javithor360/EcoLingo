@@ -12,6 +12,8 @@ export default function ProgressBar({lessonId, totalQuestions = 0}) {
     const [questionProgress, setQuestionProgress] = useState(0); // Progreso de lectura basado en preguntas
     const [confiImage, setConfiImage] = useState('/images/confi/Simple1.png');
 
+    let characterName = "terri";
+
     useEffect(() => {
         initializeStore();
 
@@ -55,13 +57,13 @@ export default function ProgressBar({lessonId, totalQuestions = 0}) {
 
         // Update Confi image based on progress
         if (percentage === 0) {
-            setConfiImage("/images/confi/Simple1.png");
+            setConfiImage(`/images/${characterName}/Simple1.png`);
         } else if (percentage < 33.33) {
-            setConfiImage("/images/confi/Happy1.png");
+            setConfiImage(`/images/${characterName}/Happy1.png`);
         } else if (percentage < 66.67) {
-            setConfiImage("/images/confi/Happy2.png");
+            setConfiImage(`/images/${characterName}/Happy2.png`);
         } else if (percentage >= 66.67) {
-            setConfiImage("/images/confi/Shout1.png");
+            setConfiImage(`/images/${characterName}/Shout1.png`);
         }
 
     }, [lessonId, totalQuestions, isQuestionCompleted, progress, readProgress]);

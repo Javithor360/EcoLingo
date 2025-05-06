@@ -1,6 +1,12 @@
 🌱 Plataforma Educativa Ecológica
 
-Este es el repositorio del proyecto de cátedra de la materia Gestión Ambiental, desarrollado por los estudiantes Oscar Mateo y Javier Enrique.
+Este es el repositorio del proyecto de cátedra de la materia Gestión Ambiental, desarrollado por los estudiantes de la Universidad Don Bosco:
+
+-
+-
+-
+-
+-
 
 🧠 Descripción del proyecto
 
