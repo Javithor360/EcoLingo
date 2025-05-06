@@ -2,11 +2,13 @@
 
 Este es el repositorio del proyecto de cátedra de la materia Gestión Ambiental, desarrollado por los estudiantes de la Universidad Don Bosco:
 
--
--
--
--
--
+| #  | Nombres                          | Carnet   |
+|----|----------------------------------|----------|
+| 1  | Oscar Mateo Elías López         | EL232710 |
+| 2  | César Giovanni López Ortiz      | LO232756 |
+| 3  | Javier Enrique Mejía Flores     | MF232724 |
+| 4  | Alvin Josué Meléndez Serrano    | MS232725 |
+| 5  | Pedro Ángel Rivera Hernández    | RH232766 |
 
 🧠 Descripción del proyecto
 
