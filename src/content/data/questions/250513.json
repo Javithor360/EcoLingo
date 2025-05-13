@@ -1,0 +1,73 @@
+{
+  "lessonId": "250513",
+  "title": "Biobarda en la quebrada La Perla: diseño y resultados",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Para qué sirve la biobarda?",
+      "options": [
+        {
+          "text": "Para medir la profundidad del agua",
+          "correct": false
+        },
+        {
+          "text": "Para atrapar basura antes de que llegue al río",
+          "correct": true
+        },
+        {
+          "text": "Para generar electricidad",
+          "correct": false
+        },
+        {
+          "text": "Para alimentar a los peces",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "¿De qué están hechos los tubos flotantes de la biobarda?",
+      "options": [
+        {
+          "text": "Polietileno",
+          "correct": true
+        },
+        {
+          "text": "Madera",
+          "correct": false
+        },
+        {
+          "text": "Hormigón",
+          "correct": false
+        },
+        {
+          "text": "Vidrio",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Cuál es un resultado de instalar la biobarda en La Perla?",
+      "options": [
+        {
+          "text": "Aumentó la cantidad de basura en el río",
+          "correct": false
+        },
+        {
+          "text": "Detuvo el flujo de agua completamente",
+          "correct": false
+        },
+        {
+          "text": "Mejoró la recolección de residuos antes del río",
+          "correct": true
+        },
+        {
+          "text": "Eliminó todas las plantas ribereñas",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "formsUrl": "/lessons/09/"
+}

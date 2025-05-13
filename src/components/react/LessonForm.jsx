@@ -23,7 +23,7 @@ export default function LessonForm({ lessonId, formsUrl, totalQuestions }) {
                 </div>
                 <h3 className="text-xl font-bold text-center text-base-content mb-2">Continúa tu aprendizaje</h3>
                 <p className="text-center font-medium text-base-content/80">
-                    Completa todas las preguntas de la lección para desbloquear el cuestionario final.
+                    Completa todas las preguntas de la lección para continuar con el aprendizaje! 🤓.
                 </p>
                 {/*<div className="mt-4 w-full max-w-xs bg-base-300 rounded-full h-2">*/}
                 {/*    <div className="bg-primary h-2 rounded-full" style={{ width: `${Math.floor((areAllQuestionsCompleted(lessonId, totalQuestions-1) ? totalQuestions-1 : 0) / totalQuestions * 100)}%` }}></div>*/}

@@ -1,0 +1,61 @@
+{
+  "lessonId": "250509",
+  "title": "Prevención de la contaminación de los ríos",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Cuál de estas acciones ayuda a prevenir la contaminación de los ríos?",
+      "options": [
+        {
+          "text": "Verter aceite usado por el fregadero",
+          "correct": false
+        },
+        {
+          "text": "Lavar el auto cerca del río para aprovechar el agua",
+          "correct": false
+        },
+        {
+          "text": "Disponer los residuos correctamente y no arrojarlos a la calle",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "¿Por qué es importante no tirar basura en las calles aunque estén lejos de un río?",
+      "options": [
+        {
+          "text": "Porque la basura puede ser arrastrada por la lluvia hasta llegar al río",
+          "correct": true
+        },
+        {
+          "text": "Porque las calles están más sucias que los ríos",
+          "correct": false
+        },
+        {
+          "text": "Porque solo contamina el lugar donde se tira, no otros espacios",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Cuál es un buen hábito para reducir la contaminación doméstica del agua?",
+      "options": [
+        {
+          "text": "Usar químicos fuertes al limpiar para que todo quede bien desinfectado",
+          "correct": false
+        },
+        {
+          "text": "Usar productos biodegradables y en cantidades moderadas",
+          "correct": true
+        },
+        {
+          "text": "Verter pintura sobrante en el desagüe para que no huela mal",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "formsUrl": "/lessons/05/"
+}

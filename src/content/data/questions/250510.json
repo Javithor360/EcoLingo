@@ -1,0 +1,73 @@
+{
+  "lessonId": "250510",
+  "title": "La quebrada La Perla y la contaminación del Río Acelhuate",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Qué es la quebrada La Perla?",
+      "options": [
+        {
+          "text": "Un río grande que nace en el Lempa",
+          "correct": false
+        },
+        {
+          "text": "Un arroyo de aguas grises que nace en la colonia La Perla",
+          "correct": true
+        },
+        {
+          "text": "Una planta de tratamiento de agua",
+          "correct": false
+        },
+        {
+          "text": "Un lago natural en Apopa",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "¿Qué contaminantes trae la quebrada al río Acelhuate?",
+      "options": [
+        {
+          "text": "Solo agua de lluvia limpia",
+          "correct": false
+        },
+        {
+          "text": "Aguas residuales, jabones y basura",
+          "correct": true
+        },
+        {
+          "text": "Pescados vivos y plantas puras",
+          "correct": false
+        },
+        {
+          "text": "Energía eléctrica y paneles solares",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Por qué es un problema para los peces y las personas?",
+      "options": [
+        {
+          "text": "Porque el agua se ve turbia y causa enfermedades",
+          "correct": true
+        },
+        {
+          "text": "Porque hace más divertidas las piscinas",
+          "correct": false
+        },
+        {
+          "text": "Porque limpia el aire y mejora la salud",
+          "correct": false
+        },
+        {
+          "text": "Porque aumenta la velocidad del río",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "formsUrl": "/lessons/06/"
+}

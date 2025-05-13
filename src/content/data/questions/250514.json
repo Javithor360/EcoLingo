@@ -1,0 +1,139 @@
+{
+  "lessonId": "250514",
+  "title": "Cambio climático y el Río Acelhuate",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Qué puede ocurrir cuando hay lluvias muy fuertes en la quebrada La Perla?",
+      "options": [
+        {
+          "text": "Arrastra plásticos, papeles y lodo al río Acelhuate",
+          "correct": true
+        },
+        {
+          "text": "El río se seca",
+          "correct": false
+        },
+        {
+          "text": "Reduce su cauce",
+          "correct": false
+        },
+        {
+          "text": "El agua se vuelve cristalina",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "¿Por qué aumentan los contaminantes en el agua durante la época seca?",
+      "options": [
+        {
+          "text": "Porque diluye más desechos",
+          "correct": false
+        },
+        {
+          "text": "Porque hay menos agua para diluirlos",
+          "correct": true
+        },
+        {
+          "text": "Porque llueve más",
+          "correct": false
+        },
+        {
+          "text": "Porque sube el nivel del río",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Qué problema adicional aparece en el agua por la menor corriente durante la sequía?",
+      "options": [
+        {
+          "text": "Mayor oxígeno disuelto",
+          "correct": false
+        },
+        {
+          "text": "Corrientes rápidas",
+          "correct": false
+        },
+        {
+          "text": "Temperatura más baja",
+          "correct": false
+        },
+        {
+          "text": "Floraciones de algas",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "¿Cómo afecta un aumento de la temperatura del agua al oxígeno disuelto?",
+      "options": [
+        {
+          "text": "Lo convierte en aire",
+          "correct": false
+        },
+        {
+          "text": "Lo disminuye",
+          "correct": true
+        },
+        {
+          "text": "Lo mantiene igual",
+          "correct": false
+        },
+        {
+          "text": "Lo aumenta",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "¿Qué les puede suceder a algunas especies de peces si el oxígeno en el agua baja demasiado?",
+      "options": [
+        {
+          "text": "Se reproducen más rápido",
+          "correct": false
+        },
+        {
+          "text": "Vuelan fuera del agua",
+          "correct": false
+        },
+        {
+          "text": "Se estresan o mueren",
+          "correct": true
+        },
+        {
+          "text": "Se vuelven transparentes",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "¿Qué pueden plantar las familias en las riberas para reducir la erosión cuando el río crece?",
+      "options": [
+        {
+          "text": "Flores de plástico",
+          "correct": false
+        },
+        {
+          "text": "Rocas de colores",
+          "correct": false
+        },
+        {
+          "text": "Carpas inflables",
+          "correct": false
+        },
+        {
+          "text": "Árboles y arbustos",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "formsUrl": "/lessons/10/"
+}

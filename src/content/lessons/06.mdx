@@ -1,0 +1,76 @@
+---
+title: 'Midiendo la calidad del agua con el ICA'
+description: 'Aprende cómo sabemos si el agua del río está limpia o sucia con un índice fácil de entender.'
+pubDate: 'May 11 2025'
+heroImage: '../../images/lessons/ica.webp'
+lessonId: '250511'
+---
+
+import lessonData from '../data/questions/250511.json';
+import Question from "../../components/react/Question";
+import LessonForms from '../../components/react/LessonForm';
+
+## 📊 ¿Qué es el Índice de Calidad de Agua (ICA)?
+
+El **ICA** es un número del **0 al 100** que nos dice **qué tan limpia está el agua**.  
+- Entre **0 y 39**: calidad **pésima**.  
+- Entre **40 y 59**: calidad **mala**.  
+- Entre **60 y 79**: calidad **regular**.  
+- Entre **80 y 100**: calidad **buena**.
+
+Este valor se obtiene al combinar varios datos sobre el agua y darnos una sola calificación fácil de entender.
+
+<Question  
+    client:load  
+    lessonId={lessonData.lessonId}  
+    questionData={lessonData.questions[0]}  
+/>
+
+---
+
+## 🌡️ Parámetros fáciles de entender
+
+Para calcular el ICA se miden cosas como:
+
+- **Oxígeno disuelto**: burbujas que necesitan los peces para respirar.  
+- **Turbidez**: qué tan **nubosa** o clara está el agua.  
+- **Coliformes fecales**: **gérmenes** que indican si hay desechos peligrosos.
+
+Cada parámetro tiene un puntaje y al juntarlos obtenemos el valor final del ICA.
+
+<Question  
+    client:load  
+    lessonId={lessonData.lessonId}  
+    questionData={lessonData.questions[1]}  
+/>
+
+---
+
+## 🔍 ¿Cómo tomamos muestras de agua?
+
+1. **Tres puntos** a lo largo del río:  
+   - En la **parte alta** (cerca de su origen).  
+   - En la **ciudad de Apopa**.  
+   - En la **desembocadura** al río Lempa.  
+2. Se recoge agua en **botellitas limpias**.  
+3. Se analiza **dos veces al año**: al inicio y al final de la época seca.
+
+Así vemos cómo cambia la calidad del agua a lo largo del tiempo y del recorrido del río.
+
+<Question  
+    client:load  
+    lessonId={lessonData.lessonId}  
+    questionData={lessonData.questions[2]}  
+/>
+
+---
+
+<LessonForms  
+    client:load  
+    lessonId={lessonData.lessonId}  
+    formsUrl={lessonData.formsUrl}  
+    totalQuestions={lessonData.questions.length}  
+/>
+
+🌟 **¡Ahora sabes cómo medimos si el agua está limpia!** 💧  
+Con estos datos, las autoridades pueden tomar decisiones para proteger nuestro río.

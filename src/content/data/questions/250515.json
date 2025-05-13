@@ -1,0 +1,140 @@
+{
+  "lessonId": "250515",
+  "title": "Impacto en la vida diaria de la comunidad",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Por qué el agua sucia del río causa problemas en casa?",
+      "options": [
+        {
+          "text": "Hace que la ropa se manche y huela mal",
+          "correct": true
+        },
+        {
+          "text": "Mejora el sabor de la comida",
+          "correct": false
+        },
+        {
+          "text": "Ayuda a deslustrar la plata",
+          "correct": false
+        },
+        {
+          "text": "Aumenta la presión del agua",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "¿Qué actividad ya no es segura junto al río?",
+      "options": [
+        {
+          "text": "Pescar pequeños peces",
+          "correct": false
+        },
+        {
+          "text": "Chapotear en el agua",
+          "correct": false
+        },
+        {
+          "text": "Jugar con ramas y latas oxidadas",
+          "correct": true
+        },
+        {
+          "text": "Pintar piedras",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Por qué es peligroso explorar las orillas llenas de basura?",
+      "options": [
+        {
+          "text": "Porque hay ramas partidas y vidrios rotos",
+          "correct": false
+        },
+        {
+          "text": "Porque el agua es demasiado clara",
+          "correct": false
+        },
+        {
+          "text": "Porque hay muchos pájaros",
+          "correct": false
+        },
+        {
+          "text": "Porque crecen frutas silvestres",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "¿Qué enfermedad puede causar bañarse en agua contaminada?",
+      "options": [
+        {
+          "text": "Infección de la piel",
+          "correct": true
+        },
+        {
+          "text": "Visión nocturna",
+          "correct": false
+        },
+        {
+          "text": "Crecimiento de hojas",
+          "correct": false
+        },
+        {
+          "text": "Superfuerza",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "¿Qué consecuencia puede tener beber agua sucia?",
+      "options": [
+        {
+          "text": "Mejora la memoria",
+          "correct": false
+        },
+        {
+          "text": "Fortalece los huesos",
+          "correct": false
+        },
+        {
+          "text": "Aumenta el apetito",
+          "correct": false
+        },
+        {
+          "text": "Dolor de estómago y diarreas",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "¿Cuál es una acción desde casa para evitar contaminar la quebrada?",
+      "options": [
+        {
+          "text": "Dejar correr la llave sin límite",
+          "correct": false
+        },
+        {
+          "text": "Tapar los desagües para no enviar aguas grises al arroyo",
+          "correct": true
+        },
+        {
+          "text": "Tirar la basura al agua",
+          "correct": false
+        },
+        {
+          "text": "Usar solo detergente líquido",
+          "correct": false
+        }
+      ]
+    }
+  ],
+    "formsUrl": "/lessons"
+  }
+  

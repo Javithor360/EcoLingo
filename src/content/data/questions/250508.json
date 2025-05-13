@@ -1,0 +1,61 @@
+{
+  "lessonId": "250508",
+  "title": "Uso Correcto de Recursos Naturales",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Cuál es una acción adecuada al visitar un río?",
+      "options": [
+        {
+          "text": "Lavar ropa con detergente en el agua del río",
+          "correct": false
+        },
+        {
+          "text": "Tirar residuos orgánicos cerca de la orilla",
+          "correct": false
+        },
+        {
+          "text": "Recoger toda la basura generada y llevarla de regreso",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "¿Por qué es importante evitar el uso de jabones o químicos en el río?",
+      "options": [
+        {
+          "text": "Porque el agua se vuelve más clara y puede atraer animales peligrosos",
+          "correct": false
+        },
+        {
+          "text": "Porque contaminan el agua y afectan la vida acuática",
+          "correct": true
+        },
+        {
+          "text": "Porque el jabón hace que el río tenga mal olor solamente",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Cuál es una forma responsable de disfrutar el entorno de un río?",
+      "options": [
+        {
+          "text": "Hacer fogatas con ramas cortadas de árboles cercanos",
+          "correct": false
+        },
+        {
+          "text": "Usar el río como baño o ducha pública",
+          "correct": false
+        },
+        {
+          "text": "Respetar la flora y fauna sin alterar su hábitat",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "formsUrl": "/lessons/04/"
+}

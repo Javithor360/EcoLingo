@@ -1,0 +1,73 @@
+{
+  "lessonId": "250511",
+  "title": "Midiendo la calidad del agua con el ICA",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Qué es el Índice de Calidad de Agua (ICA)?",
+      "options": [
+        {
+          "text": "La velocidad del agua",
+          "correct": false
+        },
+        {
+          "text": "Qué tan limpia está el agua",
+          "correct": true
+        },
+        {
+          "text": "Cuántos peces hay",
+          "correct": false
+        },
+        {
+          "text": "La profundidad del río",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": " ¿Qué parámetro nos ayuda a saber si hay gérmenes en el agua?",
+      "options": [
+        {
+          "text": "Oxígeno disuelto",
+          "correct": false
+        },
+        {
+          "text": "Turbidez",
+          "correct": false
+        },
+        {
+          "text": "Coliformes fecales",
+          "correct": true
+        },
+        {
+          "text": "pH",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Cuántas veces al año se analizan las muestras de agua?",
+      "options": [
+        {
+          "text": "Una vez",
+          "correct": false
+        },
+        {
+          "text": "Dos veces",
+          "correct": true
+        },
+        {
+          "text": "Tres veces",
+          "correct": false
+        },
+        {
+          "text": "Cuatro veces",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "formsUrl": "/lessons/07/"
+}

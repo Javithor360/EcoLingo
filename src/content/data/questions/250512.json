@@ -1,0 +1,73 @@
+{
+  "lessonId": "250512",
+  "title": "Empresas y municipios: aliados del río",
+  "questions": [
+    {
+      "id": 0,
+      "text": "¿Quiénes ayudan a cuidar el río Acelhuate?",
+      "options": [
+        {
+          "text": "Solo los bomberos",
+          "correct": false
+        },
+        {
+          "text": "Empresas y alcaldías",
+          "correct": true
+        },
+        {
+          "text": "Únicamente los pescadores",
+          "correct": false
+        },
+        {
+          "text": "Solo las escuelas",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "text": "¿Qué se hace en los talleres de colaboración?",
+      "options": [
+        {
+          "text": "Enseñar buenas prácticas a las empresas",
+          "correct": true
+        },
+        {
+          "text": "Pintar murales en las orillas",
+          "correct": false
+        },
+        {
+          "text": "Construir embarcaciones",
+          "correct": false
+        },
+        {
+          "text": "Organizar competencias de pesca",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "¿Cuál es un beneficio de tener un río limpio?",
+      "options": [
+        {
+          "text": "Más enfermedades en la comunidad",
+          "correct": false
+        },
+        {
+          "text": "Disminuye el turismo",
+          "correct": false
+        },
+        {
+          "text": "Mejora la imagen de empresas y alcaldía",
+          "correct": true
+        },
+        {
+          "text": "Aumenta la contaminación sonora",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "formsUrl": "/lessons/08/"
+}
